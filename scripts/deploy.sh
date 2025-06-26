@@ -1,18 +1,10 @@
 #!/bin/bash
 echo "started"
-pwd
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+cd /home/ubuntu/NodeJS-App-main/NodeJS-App-main && npm install
 
-cd /home/ubuntu/deduce-web && npm install
+cd /home/ubuntu/NodeJS-App-main/NodeJS-App-main && npm install pm2
 
-cd /home/ubuntu/deduce-web && npm install pm2
-
-pwd
-
-cd /home/ubuntu/deduce-web && pm2 restart de-duce-web
-pwd
+cd /home/ubuntu/NodeJS-App-main/NodeJS-App-main && pm2 restart react-dev
 
 echo "finished"

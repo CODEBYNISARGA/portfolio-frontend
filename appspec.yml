@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
  - source: /
-   destination: /home/ubuntu/deduce-web
+   destination: /home/ubuntu/NodeJS-App-main/NodeJS-App-main
 permissions:
- - object: /home/ubuntu/deduce-web
+ - object: /home/ubuntu/NodeJS-App-main/NodeJS-App-main
    pattern: '**'
    mode: '0755'
    owner: ubuntu
