@@ -1,17 +1,18 @@
 #!/bin/bash
+echo "started"
+pwd
 
-echo "===== Starting Deployment Script ====="
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# Go to the deployed folder
-cd /home/ubuntu/portfolio-frontend
+cd /home/ubuntu/deduce-web && npm install
 
-# Optional: Install dependencies (already done by CodeBuild, but safe)
-npm install
+cd /home/ubuntu/deduce-web && npm install pm2
 
-# Stop previous pm2 process (if running)
-pm2 delete all || true
+pwd
 
-# Start app using pm2
-pm2 start npm --name "portfolio-app" -- start
+cd /home/ubuntu/deduce-web && pm2 restart de-duce-web
+pwd
 
-echo "===== Deployment Script Finished ====="
+echo "finished"

@@ -1,12 +1,20 @@
 version: 0.0
 os: linux
-
 files:
-  - source: /
-    destination: /home/ubuntu/portfolio-frontend
-
+ - source: /
+   destination: /home/ubuntu/deduce-web
+permissions:
+ - object: /home/ubuntu/deduce-web
+   pattern: '**'
+   mode: '0755'
+   owner: ubuntu
+   group: ubuntu
+   type:
+     - file
+     - directory
 hooks:
-  AfterInstall:
-    - location: scripts/deploy.sh
+  
+  ApplicationStart:
+    - location: application-start-hook.sh
       timeout: 300
       runas: ubuntu
