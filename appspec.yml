@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
  - source: /
-   destination: /home/ubuntu/NodeJS-App-main/NodeJS-App-main
+   destination: /home/ubuntu/portfolio-frontend
 permissions:
- - object: /home/ubuntu/NodeJS-App-main/NodeJS-App-main
+ - object: /home/ubuntu/portfolio-frontend
    pattern: '**'
    mode: '0755'
    owner: ubuntu
